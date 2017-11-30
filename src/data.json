@@ -20,7 +20,7 @@
     "landSize": 3,
     "special": "Something special",
     "area": 100,
-    "map": "48.9146867,38.40699138888889",
+    "map": "48.916154, 38.419385",
     "imgMin": "1-min.jpg",
     "imgs": [
       "1-1.jpg",
@@ -54,7 +54,7 @@
     "landSize": 3,
     "special": "Something special",
     "area": 100,
-    "map": "48.9146867,38.40699138888889",
+    "map": "48.911826, 38.420250",
     "imgMin": "1-min.jpg",
     "imgs": [
       "1-1.jpg",
@@ -88,7 +88,7 @@
     "landSize": 3,
     "special": "Something special",
     "area": 100,
-    "map": "48.9146867,38.40699138888889",
+    "map": "48.907613, 38.421029",
     "imgMin": "2-min.jpg",
     "imgs": [
       "2-1.jpg",
@@ -125,7 +125,7 @@
     "landSize": 3,
     "special": "Something special",
     "area": 100,
-    "map": "48.9146867,38.40699138888889",
+    "map": "50.409394, 30.490579",
     "imgMin": "3-min.jpg",
     "imgs": [
       "3-1.jpg"

@@ -17,7 +17,15 @@ let key = 'AIzaSyCdU3vOouOlfFnBr9THzGXHBo6GD8Y1XJk'
 const Map = withScriptjs(withGoogleMap(props =>
     <GoogleMap
         panControl={false} streetViewControl={false}
-        defaultZoom={8} defaultCenter={{lat: -34.397, lng: 150.644}}
+        defaultZoom={12} 
+        defaultCenter={{
+            lat: parseFloat(props.cityCoordinates.split(',')[0].trim()), 
+            lng: parseFloat(props.cityCoordinates.split(',')[1].trim())
+        }}
+        center={{
+            lat: parseFloat(props.cityCoordinates.split(',')[0].trim()), 
+            lng: parseFloat(props.cityCoordinates.split(',')[1].trim())
+        }}
         defaultOptions={{
             styles: mapStyle,
             streetViewControl: false,
@@ -31,13 +39,14 @@ const Map = withScriptjs(withGoogleMap(props =>
     >
     {
         props.allEl.map(function (el, i) {
-            // console.log(el.map)
-            return <Marker key={i} position={{lat: -34.397 + i, lng: 150.644}} icon={m}/>
+            return <Marker key={i} position={{
+                lat: parseFloat(el.map.split(',')[0].trim()), 
+                lng: parseFloat(el.map.split(',')[1].trim())
+            }} icon={m}/>
         })  
     }
     </GoogleMap>
 ));
-
 
 class Right extends Component {
 
@@ -52,7 +61,9 @@ class Right extends Component {
     render() {
         let hoverId = this.props.state.hoverRealEstate.id
         let allEl = this.props.state.realEstate
-
+        let cityCoordinates = this.props.state.selectedCity.coordinates
+        if(cityCoordinates === 'undefined')
+            cityCoordinates = allEl[0].map
         return (
             <div id="Right">
                 <Map
@@ -62,6 +73,8 @@ class Right extends Component {
                     mapElement={<div style={{height: `100%`}}/>}
                     hoverId={hoverId}
                     allEl={allEl}
+                    cityCoordinates={cityCoordinates}
+                   
                 />
                 {/* {this.state.showInfo ? <Info id={this.state.showInfo} data={this.props.data}/> : ''} */}
             </div>
@@ -74,15 +87,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = (dispatch) => {
-    return {
-        setOwnershipForm: (form) => {
-            // dispatch(setOwnershipForm(form))
-
-            // if (form === 'commercial') dispatch(setRealEstateType('Offices'))
-            // else dispatch(setRealEstateType('Single homes'))
-        }
-    }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Right)
+export default connect(mapStateToProps, null)(Right)

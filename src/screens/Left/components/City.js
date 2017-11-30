@@ -7,14 +7,12 @@ import {setCityCoordinates, rmCityCoordinates} from '../../../actions/selectedCi
 class City extends Component {
 
     render() {
-
         let citys = []
         citys.push('not select')
         for(let i = 0; i < this.props.state.realEstate.length; i++)
             if (!citys.includes(this.props.state.realEstate[i].city))
                 citys.push(this.props.state.realEstate[i].city)
-
-
+                
         return (
             <select className="city" onChange={(e) => {
                 let v = e.target.value
@@ -32,21 +30,8 @@ class City extends Component {
                         .catch((error) =>{ 
                             this.props.rmCityCoordinates(v)
                          });
-                }
-                    
-
-                // fetch('http://maps.googleapis.com/maps/api/geocode/json?address=Lisichansk')
-                // .then(function(response) {
-                //     alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
-                //     alert(response.status); // 200
-                
-                //     return response.json();
-                //    })
-                //   .then(function(user) {
-                //     alert(user.name); // iliakan
-                //   })
-               
-                }}>
+                } 
+            }}>
                 {citys.map((e, i) => {
                     return <option key={i} value={e !== 'not select' ? e : 'undefined'}>{'City: '}{e}</option>
                 })}
