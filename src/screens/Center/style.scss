@@ -1,0 +1,87 @@
+@import './../../style.scss';
+
+#Center {
+  background: $bg-color;
+  width: 30vw;
+  min-width: 350px;
+  list-style-type: none;
+  padding: 0 7px 0 0;
+  margin: 0;
+  display: block;
+  flex-direction: column;
+  overflow: auto;
+  overflow-x: hidden;
+  position: relative;
+  > h2{
+    text-align: center;
+    padding: 20px 0 ;
+    color: $not-active-text-color;
+  }
+  li {
+    display: flex;
+    padding: 10px;
+    margin: 5px 0;
+    background: white;
+    min-height: 90px;
+    color: $not-active-text-color;
+    border: 1px solid white;
+    cursor: pointer;
+    transition: 0.5s;
+    .test{
+      //background: red;
+      width: 50px;
+      height: 50px;
+    }
+    .left {
+      width: 25%;
+      .realEstateType{
+        color: black;
+      }
+      .floor{}
+      .bedrooms{}
+      .price{
+        color: $not-active-text-color-three-green;
+      }
+    }
+    .center {
+      width: 50%;
+      .price{}
+    }
+    .right {
+      width: 25%;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+      .close{
+        display: none
+      }
+    }
+    .left, .center, .right{
+      display: flex;
+      flex-direction: column;
+    }
+    .left div, .center div, .right div{
+      margin-bottom: 10px;
+    }
+    .left div:last-child, .center div:last-child, .right div:last-child {
+      margin-bottom: 0px;
+    }
+  }
+  .selected{
+    border: 1px solid red;
+    .close{
+      left: 0;
+      top: 0;
+      display: flex !important;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: white;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  .notSelected{
+    opacity: 0.6
+  }
+}

@@ -1,0 +1,140 @@
+[
+  {
+    "status": "Active",
+    "location": "RTI",
+    "yearBuild": 2003,
+    "ownershipForm": "residential",
+    "realEstateType": "Single homes",
+    "city": "Lisichansck",
+    "street": "Glinki",
+    "description": "Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!",
+    "agent": "Some text",
+    "price": 60000,
+    "priceFt": 750,
+    "floor": 3,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "rooms": 2,
+    "garages": 3,
+    "garageSize": 3,
+    "landSize": 3,
+    "special": "Something special",
+    "area": 100,
+    "map": "48.9146867,38.40699138888889",
+    "imgMin": "1-min.jpg",
+    "imgs": [
+      "1-1.jpg",
+      "1-2.jpg"
+    ],
+    "plan": "img.png",
+    "option": [
+      "garden",
+      "guestApartment",
+      "gym"
+    ]
+  },
+  {
+    "status": "Active",
+    "location": "RTI",
+    "yearBuild": 2003,
+    "ownershipForm": "residential",
+    "realEstateType": "Single homes",
+    "city": "Lisichansck",
+    "street": "Glinki",
+    "description": "Tenetur quod quidem in voluptatem corporis dolorum dicta sit pariatur porro quaerat autem ipsam odit quam beatae tempora quibusdam illum! Modi velit odio nam nulla unde amet odit pariatur at!",
+    "agent": "Some text",
+    "price": 60000,
+    "priceFt": 750,
+    "floor": 3,
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "rooms": 2,
+    "garages": 3,
+    "garageSize": 3,
+    "landSize": 3,
+    "special": "Something special",
+    "area": 100,
+    "map": "48.9146867,38.40699138888889",
+    "imgMin": "1-min.jpg",
+    "imgs": [
+      "1-1.jpg",
+      "1-2.jpg"
+    ],
+    "plan": "img.png",
+    "option": [
+      "garden",
+      "guestApartment",
+      "gym"
+    ]
+  },
+  {
+    "status": "Active",
+    "location": "RTI",
+    "yearBuild": 2000,
+    "ownershipForm": "commercial",
+    "realEstateType": "Offices",
+    "city": "Lisichansck",
+    "street": "Glinki",
+    "description": "Ad dolore dignissimos asperiores dicta facere optio quod commodi nam tempore recusandae. Rerum sed nulla eum vero expedita ex delectus voluptates rem at neque quos facere sequi unde optio aliquam!",
+    "agent": "Some text",
+    "price": 10000,
+    "priceFt": 750,
+    "floor": 3,
+    "bedrooms": 2,
+    "bathrooms": 3,
+    "rooms": 3,
+    "garages": 3,
+    "garageSize": 3,
+    "landSize": 3,
+    "special": "Something special",
+    "area": 100,
+    "map": "48.9146867,38.40699138888889",
+    "imgMin": "2-min.jpg",
+    "imgs": [
+      "2-1.jpg",
+      "2-2.jpg",
+      "2-3.jpg",
+      "2-4.jpg"
+    ],
+    "plan": "img.png",
+    "option": [
+      "concierge",
+      "parking",
+      "gym",
+      "jacuzzi"
+    ]
+  },
+  {
+    "status": "Active",
+    "location": "RTI",
+    "yearBuild": 2001,
+    "ownershipForm": "residential",
+    "realEstateType": "Single homes",
+    "city": "Kiev",
+    "street": "Pavlenko",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui dicta minus molestiae vel beatae natus eveniet ratione temporibus aperiam harum alias officiis assumenda officia quibusdam deleniti eos cupiditate dolore doloribus!",
+    "agent": "Some text",
+    "price": 24000,
+    "priceFt": 750,
+    "floor": 3,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "rooms": 1,
+    "garages": 3,
+    "garageSize": 3,
+    "landSize": 3,
+    "special": "Something special",
+    "area": 100,
+    "map": "48.9146867,38.40699138888889",
+    "imgMin": "3-min.jpg",
+    "imgs": [
+      "3-1.jpg"
+    ],
+    "plan": "img.png",
+    "option": [
+      "utilityRoom",
+      "jacuzzi",
+      "gym"
+    ]
+  }
+]

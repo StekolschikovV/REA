@@ -1,0 +1,88 @@
+@import './../../style.scss';
+
+#MapAndInfo {
+  background: $bg-color;
+  width: 50vw;
+  padding: 0 0 0 7px;
+  position: relative;
+  #info {
+    position: absolute;
+    top: 0;
+    left: 7px;
+    background: white;
+    width: calc(100% - 7px);
+    height: 100%;
+    .slider {
+      ul {
+        padding: 0;
+        margin: 0;
+        height: 60vh;
+        position: relative;
+        li {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          padding: 0;
+          margin: 0;
+          list-style-type: none;
+          background-size: cover;
+          background-position: center;
+          display: none;
+        }
+        .show {
+          display: block;
+        }
+      }
+    }
+    .controls {
+      width: 100%;
+      background: $bg-price;
+      display: flex;
+      justify-content: space-between;
+      .previous {
+
+      }
+      .next {
+        text-align: right;
+      }
+      .next, .previous {
+        border: 0;
+        background: transparent;
+        color: $not-active-text-color;
+      }
+      .hide {
+        opacity: 0;
+        pointer-events: none
+      }
+    }
+    .textBlock {
+      color: $not-active-text-color;
+      .adresLikePrice {
+        display: flex;
+        justify-content: space-between;
+        .address {
+
+        }
+        .likePrice {
+          display: flex;
+          .like {
+
+          }
+          .price {
+
+          }
+        }
+      }
+      .description {
+
+      }
+      .attributes {
+        display: flex;
+        flex-wrap: wrap;
+        span {
+          min-width: 30%;
+        }
+      }
+    }
+  }
+}

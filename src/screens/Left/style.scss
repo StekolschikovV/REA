@@ -1,0 +1,221 @@
+@import './../../style.scss';
+
+#FiltersAndMenu {
+  background: $bg-color;
+  width: 20vw;
+  min-width: 250px;
+  padding: 10px;
+  overflow: scroll;
+  //overflow-x: hidden;
+  display: block;
+  .ownershipForm {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    color: $not-active-text-color;
+    display: flex;
+    flex-direction: row;
+    li {
+      width: 50%;
+      padding: 10px;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+      cursor: pointer;
+    }
+    .active {
+      background: white;
+      color: black;
+      font-weight: bold;
+    }
+  }
+  .realEstateTypes {
+    margin: 0;
+    padding: 0;
+    background: white;
+    list-style-type: none;
+    li {
+      color: $not-active-text-color-tow;
+      cursor: pointer;
+      padding: 5px 10px;
+      margin: 0 0 5px 0;
+    }
+    .active {
+      background: red;
+      color: white;
+
+      font-weight: bold;
+    }
+  }
+  select {
+    width: 100%;
+    padding: 5px;
+    border-radius: 0;
+    border: 1px dashed $not-active-text-color;
+    color: $not-active-text-color;
+    //font-weight: bold;
+    font-size: 14px;
+    margin-top: 20px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  #checkboxOptions {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    input {
+      position: relative;
+      bottom:-2px;
+    }
+    span {
+      > * {cursor: pointer;}
+      padding: 2px 0;
+      flex: 1 0 50%;
+      font: normal 13px 'Clear Sans Light';
+      &:hover {
+        background: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .moreFilters {
+  }
+  .moreFiltersTitle {
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    position: relative;
+    &:after {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -10px;
+      margin: auto;
+      content: '↓'
+    }
+  }
+}
+
+/** Slider **/
+.input-range{
+  margin-top: 40px;
+}
+.input-range__slider {
+  appearance: none;
+  background: $bg-price;
+  border: none;
+  cursor: pointer;
+  display: block;
+  height: 6px;
+  outline: none;
+  position: absolute;
+  z-index: 9;
+  left: -2.5px;
+  top: -5px;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  width: 6px;
+}
+
+.input-range__slider:active {
+  transform: scale(3);
+}
+
+.input-range--disabled .input-range__slider {
+  background: #cccccc;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  transform: none;
+}
+
+.input-range__slider-container {
+  transition: left 0.3s ease-out;
+}
+
+.input-range__label {
+  color: #aaaaaa;
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 0.8rem;
+  transform: translateZ(0);
+  white-space: nowrap;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+  bottom: -1.4rem;
+  position: absolute;
+  z-index: 9;
+}
+
+.input-range__label--min {
+  left: 0;
+}
+
+.input-range__label--max {
+  right: 0;
+}
+
+.input-range__label--value {
+  position: absolute;
+  z-index: 9;
+  top: -35px;
+  background: $bg-price;
+  padding: 2px 0;
+  width: 40px;
+  left: -20px;
+  text-align: center;
+  color: white;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 15px;
+    bottom: -10px;
+    border: 5px solid transparent;
+    border-top: 5px solid $bg-price;
+  }
+}
+
+.input-range__label-container {
+  position: relative;
+}
+
+.input-range__label--max .input-range__label-container, .input-range__label--min .input-range__label-container {
+  display: none;
+}
+
+.input-range__track {
+  background: #eeeeee;
+  border-radius: 0.3rem;
+  cursor: pointer;
+  display: block;
+  height: 0.3rem;
+  position: relative;
+  transition: left 0.3s ease-out, width 0.3s ease-out;
+}
+
+.input-range--disabled .input-range__track {
+  background: #eeeeee;
+}
+
+.input-range__track--background {
+  left: 0;
+  margin-top: -0.15rem;
+  position: absolute;
+  z-index: 9;
+  right: 0;
+  top: 50%;
+}
+
+.input-range__track--active {
+  background: lighten($bg-price, 25%)
+}
+
+.input-range {
+  height: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+/** Slider **/
+
