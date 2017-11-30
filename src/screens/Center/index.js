@@ -3,6 +3,7 @@ import {connect} from 'react-redux'
 import './style.scss';
 
 import {setSelectedRealEstate} from '../../actions/selectedRealEstate'
+import {setHoverRealEstate, rmHoverRealEstate} from '../../actions/hoverRealEstate'
 
 class Center extends Component {
 
@@ -38,7 +39,6 @@ class Center extends Component {
                 && (this.filter.yearBuild === 'undefined' ? true : e.yearBuild === parseInt(this.filter.yearBuild, 10))
                 && (this.optionCheacker(this.filter.option, e.option))
             )
-
                 showRealEstate.push(
                     <li key={i}
                         className={i === this.selectedId ? 'selected' : this.selectedId !== 'undefined' ? 'notSelected' : ''}
@@ -47,7 +47,14 @@ class Center extends Component {
                                 this.props.setSelectedRealEstate('undefined')
                             else
                                 this.props.setSelectedRealEstate(i)
-                        }}>
+                        }}
+                        onMouseEnter={()=>{
+                            this.props.setHoverRealEstate(i)
+                        }}
+                        onMouseLeave={() => {
+                            this.props.rmHoverRealEstate(i)
+                        }}                        
+                        >
                         <div className="left">
                             <div className="realEstateType"><h2>{e.realEstateType}</h2></div>
                             <div className="floor"><h3>{e.floor} floor</h3></div>
@@ -93,6 +100,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setSelectedRealEstate: (id) => {
             dispatch(setSelectedRealEstate(id))
+        },
+        setHoverRealEstate: (id) => {
+            dispatch(setHoverRealEstate(id))
+        },
+        rmHoverRealEstate: (id) => {
+            dispatch(rmHoverRealEstate(id))
         }
     }
 }

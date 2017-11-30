@@ -3,30 +3,14 @@ import './App.css';
 // import Content from './screens/Content/'
 import Center from './screens/Center/'
 import Left from './screens/Left/'
+import Right from './screens/Right/'
 // import MapAndInfo from './screens/MapAndInfo/'
 import {connect} from 'react-redux'
 
 import data from './data.json'
 
 class App extends Component {
-    //
-    // constructor(props) {
-    //     super(props)
-    //
-    //     // this.state = {
-    //     //     showInfo: false,
-    //     //     isFirstClick: true,
-    //     //     ownershipForm: 'residential',
-    //     // }
-    //
-    //     // this._handlerShowInfo = this._handlerShowInfo.bind(this)
-    //
-    //
-    //     // this.props.state.subscribe(() => {
-    //     //     console.log(123)
-    //     // })
-    // }
-
+    
     componentWillMount(){
         this.loadDefaultData()
     }
@@ -43,8 +27,7 @@ class App extends Component {
             <div className="App">
                 <Left />
                 {<Center />}
-                {/*<Content data={data} showInfo={this._handlerShowInfo}/>*/}
-                {/*<MapAndInfo data={data} showInfo={this.state.showInfo}/>*/}
+                <Right/>
             </div>
         );
     }

@@ -3,7 +3,7 @@
 // import mapStyle from './mapStyle.js'
 // import './style.scss';
 // import m from '../../img/m.png'
-//
+
 // import {
 //     withScriptjs,
 //     withGoogleMap,
@@ -12,9 +12,9 @@
 //     Marker,
 //     // MarkerClusterer,
 // } from "react-google-maps";
-//
+
 // let key = 'AIzaSyCdU3vOouOlfFnBr9THzGXHBo6GD8Y1XJk'
-//
+
 // const Map = withScriptjs(withGoogleMap(props =>
 //     <GoogleMap
 //         panControl={false} streetViewControl={false}
@@ -35,18 +35,18 @@
 //         })}
 //     </GoogleMap>
 // ));
-//
-//
+
+
 // class MapAndInfo extends Component {
-//
+
 //     constructor(props) {
 //         super(props)
-//
+
 //         this.state = {
 //             showInfo: false
 //         }
 //     }
-//
+
 //     componentWillReceiveProps() {
 //         setTimeout(() => {
 //             this.setState({
@@ -54,9 +54,9 @@
 //             })
 //         }, 0)
 //     }
-//
+
 //     render() {
-//
+
 //         return (
 //             <div id="MapAndInfo">
 //                 <Map
@@ -70,5 +70,5 @@
 //         );
 //     }
 // }
-//
+
 // export default MapAndInfo;
