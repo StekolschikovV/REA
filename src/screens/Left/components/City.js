@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux'
 
 import {setCity} from '../../../actions/filter'
+import {setCityCoordinates, rmCityCoordinates} from '../../../actions/selectedCity'
 
 class City extends Component {
 
@@ -15,7 +16,37 @@ class City extends Component {
 
 
         return (
-            <select className="city" onChange={(e) => this.props.setCity(e.target.value)}>
+            <select className="city" onChange={(e) => {
+                let v = e.target.value
+                this.props.setCity(v)
+                if(v === 'undefined')
+                    this.props.rmCityCoordinates(v)
+                else{
+                    fetch(`http://maps.googleapis.com/maps/api/geocode/json?address=${v}`)
+                        .then((response) => {
+                            return response.json()
+                        })
+                        .then((json) => {
+                            this.props.setCityCoordinates(`${json.results[0].geometry.location.lat},${json.results[0].geometry.location.lng}`)
+                        })
+                        .catch((error) =>{ 
+                            this.props.rmCityCoordinates(v)
+                         });
+                }
+                    
+
+                // fetch('http://maps.googleapis.com/maps/api/geocode/json?address=Lisichansk')
+                // .then(function(response) {
+                //     alert(response.headers.get('Content-Type')); // application/json; charset=utf-8
+                //     alert(response.status); // 200
+                
+                //     return response.json();
+                //    })
+                //   .then(function(user) {
+                //     alert(user.name); // iliakan
+                //   })
+               
+                }}>
                 {citys.map((e, i) => {
                     return <option key={i} value={e !== 'not select' ? e : 'undefined'}>{'City: '}{e}</option>
                 })}
@@ -34,6 +65,12 @@ const mapDispatchToProps = (dispatch) => {
     return {
         setCity: (city) => {
             dispatch(setCity(city))
+        },
+        rmCityCoordinates: (coordinates) => {
+            dispatch(rmCityCoordinates(coordinates))
+        },
+        setCityCoordinates: (coordinates) => {
+            dispatch(setCityCoordinates(coordinates))
         }
     }
 }

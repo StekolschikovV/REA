@@ -9,9 +9,7 @@ import {
     withScriptjs,
     withGoogleMap,
     GoogleMap,
-    // FusionTablesLayer,
     Marker,
-    // MarkerClusterer,
 } from "react-google-maps";
 
 let key = 'AIzaSyCdU3vOouOlfFnBr9THzGXHBo6GD8Y1XJk'
@@ -31,9 +29,12 @@ const Map = withScriptjs(withGoogleMap(props =>
             fullscreenControl: false
         }}
     >
-        {[1, 2, 3, 4, 5, 6].map(function (i) {
+    {
+        props.allEl.map(function (el, i) {
+            // console.log(el.map)
             return <Marker key={i} position={{lat: -34.397 + i, lng: 150.644}} icon={m}/>
-        })}
+        })  
+    }
     </GoogleMap>
 ));
 
@@ -48,15 +49,9 @@ class Right extends Component {
         }
     }
 
-    // componentWillReceiveProps() {
-    //     setTimeout(() => {
-    //         this.setState({
-    //             showInfo: this.props.showInfo
-    //         })
-    //     }, 0)
-    // }
-
     render() {
+        let hoverId = this.props.state.hoverRealEstate.id
+        let allEl = this.props.state.realEstate
 
         return (
             <div id="Right">
@@ -65,6 +60,8 @@ class Right extends Component {
                     loadingElement={<div style={{height: `100%`}}/>}
                     containerElement={<div style={{height: `100%`}}/>}
                     mapElement={<div style={{height: `100%`}}/>}
+                    hoverId={hoverId}
+                    allEl={allEl}
                 />
                 {/* {this.state.showInfo ? <Info id={this.state.showInfo} data={this.props.data}/> : ''} */}
             </div>
