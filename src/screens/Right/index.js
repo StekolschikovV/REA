@@ -3,7 +3,8 @@ import { connect } from 'react-redux'
 
 import './style.scss';
 
-import Map from './components/map'
+import Map from './components/Map'
+import Info from './components/Info'
 
 let key = 'AIzaSyCdU3vOouOlfFnBr9THzGXHBo6GD8Y1XJk'
 
@@ -18,6 +19,8 @@ class Right extends Component {
     }
 
     render() {
+
+        let selectedRealEstate = this.props.state.selectedRealEstate.id
         let hoverId = this.props.state.hoverRealEstate.id
         let allEl = this.props.state.realEstate
         let selectedCoordinates = 'undefined'
@@ -37,7 +40,7 @@ class Right extends Component {
                     allEl={allEl}
                     selectedCoordinates={selectedCoordinates}
                     cityCoordinates={cityCoordinates} />
-                {/* {this.state.showInfo ? <Info id={this.state.showInfo} data={this.props.data}/> : ''} */}
+                { selectedRealEstate !=='undefined' ? <Info id={this.state.showInfo} data={this.props.state}/> : ''}
             </div>
         );
     }
