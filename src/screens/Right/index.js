@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import {connect} from 'react-redux'
-// import Info from './Info'
 import mapStyle from './components/mapStyle.js'
 import './style.scss';
-import m from '../../img/m.png'
+import locationMarker from '../../img/location.svg'
 
 import {
     withScriptjs,
@@ -42,7 +41,7 @@ const Map = withScriptjs(withGoogleMap(props =>
             return <Marker key={i} position={{
                 lat: parseFloat(el.map.split(',')[0].trim()), 
                 lng: parseFloat(el.map.split(',')[1].trim())
-            }} icon={m}/>
+            }} icon={locationMarker}/>
         })  
     }
     </GoogleMap>

@@ -26,8 +26,9 @@ class App extends Component {
         return (
             <div className="App">
                 <Left />
-                {<Center />}
+                <Center />
                 <Right/>
+
             </div>
         );
     }
